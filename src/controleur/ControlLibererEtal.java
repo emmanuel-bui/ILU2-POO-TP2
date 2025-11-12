@@ -21,9 +21,11 @@ public class ControlLibererEtal {
 	 */
 	public String[] libererEtal(String nomVendeur) {
 		if (controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur) != null) {
-			return controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur).etatEtal();
+			String[] retour = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur).etatEtal();
+			controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur).libererEtal();
+			return retour;
 		} else {
-			return new String[] {};
+			return null;
 		}
 	}
 
